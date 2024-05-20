@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class2th (Bit)", "..\Class2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class3th (Conditional Statement)", "..\Class3th (Conditional Statement)\Class3th (Conditional Statement).csproj", "{64680C76-5E65-48E3-8891-71E92EA22525}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class4th (Iteration Statement)", "..\Class4th (Iteration Statement)\Class4th (Iteration Statement).csproj", "{BD517994-9CB0-488C-B769-053EB24E4EAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class4th (Iteration Statement)", "..\Class4th (Iteration Statement)\Class4th (Iteration Statement).csproj", "{BD517994-9CB0-488C-B769-053EB24E4EAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class5th (Arrangement)", "..\Class5th (Arrangement)\Class5th (Arrangement).csproj", "{B6DFB272-DA0E-4BA0-88AF-08E1003A9265}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{BD517994-9CB0-488C-B769-053EB24E4EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD517994-9CB0-488C-B769-053EB24E4EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD517994-9CB0-488C-B769-053EB24E4EAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6DFB272-DA0E-4BA0-88AF-08E1003A9265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6DFB272-DA0E-4BA0-88AF-08E1003A9265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6DFB272-DA0E-4BA0-88AF-08E1003A9265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6DFB272-DA0E-4BA0-88AF-08E1003A9265}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
