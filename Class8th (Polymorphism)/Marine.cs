@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Program
+namespace Class8th__Polymorphism_
 {
     internal class Marine : Unit    // 상속 받고자 하는 상위 클래스의 이름을 적는다.
     {
