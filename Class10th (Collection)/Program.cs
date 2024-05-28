@@ -109,7 +109,7 @@ namespace Class10th__Collection_
 
             // stack[0]; (X)
 
-            // stack.Pop();    // 가장 나중에 들어온 [50]이 빠진다.
+            // stack.Pop();    // [50]이 빠진다.
 
             // Console.WriteLine("Stack의 Peek 값 : " + stack.Peek());    // 제일 앞의 값 출력
             // Console.WriteLine("Stack의 Count 값 : " + stack.Count());
