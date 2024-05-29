@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class9th (Random)", "..\Cla
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class10th (Collection)", "..\Class10th (Collection)\Class10th (Collection).csproj", "{EE05CCC0-B8DA-4A4F-8D58-15AFB9B3F9FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class11th (Operata Overoading)", "..\Class11th (Operata Overoading)\Class11th (Operata Overoading).csproj", "{BE448A77-4333-4C84-9778-DECD43648A7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class11th (Operator Overloading)", "..\Class11th (Operata Overoading)\Class11th (Operator Overloading).csproj", "{BE448A77-4333-4C84-9778-DECD43648A7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

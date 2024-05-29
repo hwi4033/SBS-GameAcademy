@@ -1,4 +1,4 @@
-﻿namespace Class11th__Operata_Overoading_
+﻿namespace Class11th__Operator_Overloading_
 {
     public class Point2D
         {

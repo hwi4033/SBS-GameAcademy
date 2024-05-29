@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\SBS-GameAcademy\\Class11th (Operata Overoading)\\Class11th (Operata Overoading).csproj",
-      "projectName": "Class11th (Operata Overoading)",
-      "projectPath": "C:\\Users\\Administrator\\Desktop\\SBS-GameAcademy\\Class11th (Operata Overoading)\\Class11th (Operata Overoading).csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\SBS-GameAcademy\\Class11th (Operata Overoading)\\Class11th (Operator Overloading).csproj",
+      "projectName": "Class11th (Operator Overloading)",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\SBS-GameAcademy\\Class11th (Operata Overoading)\\Class11th (Operator Overloading).csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Administrator\\Desktop\\SBS-GameAcademy\\Class11th (Operata Overoading)\\obj\\",
       "projectStyle": "PackageReference",
