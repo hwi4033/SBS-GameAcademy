@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("C# Sokoban")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a587881c49791fe8415bbd57100d6aea2887033b")]
 [assembly: System.Reflection.AssemblyProductAttribute("C# Sokoban")]
 [assembly: System.Reflection.AssemblyTitleAttribute("C# Sokoban")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -28,8 +28,6 @@ namespace Game
         }
         public void Move(int[,] map, ConsoleKeyInfo key)
         {
-            key = Console.ReadKey();
-
             switch (key.Key)
             {
                 case ConsoleKey.UpArrow:

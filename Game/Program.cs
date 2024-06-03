@@ -7,6 +7,7 @@ namespace Game
     {
         static void Main(string[] args)
         {
+            Screen screen = new Screen();
             Stages stages = new Stages();
             Player player = new Player();           
             
@@ -18,6 +19,7 @@ namespace Game
             while(true)
             {
                 stages.Rendering(stages.stage1);
+                stages.GoalRendering(stages.stage1);
 
                 Console.SetCursorPosition(player.X, player.Y);
                 Console.Write(player.Shape);
@@ -25,8 +27,8 @@ namespace Game
                 key = Console.ReadKey();
                 player.Move(stages.stage1, key);
 
+
                 Console.Clear();
-                stages.Add();
             }          
         }
     }

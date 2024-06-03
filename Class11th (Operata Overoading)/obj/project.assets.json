@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\Hwi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\SBS-GameAcademy\\Class11th (Operata Overoading)\\Class11th (Operator Overloading).csproj",
+      "projectUniqueName": "C:\\Users\\Hwi\\Desktop\\SBS-GameAcademy\\Class11th (Operata Overoading)\\Class11th (Operator Overloading).csproj",
       "projectName": "Class11th (Operator Overloading)",
-      "projectPath": "C:\\Users\\Administrator\\Desktop\\SBS-GameAcademy\\Class11th (Operata Overoading)\\Class11th (Operator Overloading).csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Desktop\\SBS-GameAcademy\\Class11th (Operata Overoading)\\obj\\",
+      "projectPath": "C:\\Users\\Hwi\\Desktop\\SBS-GameAcademy\\Class11th (Operata Overoading)\\Class11th (Operator Overloading).csproj",
+      "packagesPath": "C:\\Users\\Hwi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hwi\\Desktop\\SBS-GameAcademy\\Class11th (Operata Overoading)\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hwi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -40,6 +40,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -61,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
