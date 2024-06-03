@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+            int direction = 0;
             Screen screen = new Screen();
             Stages stages = new Stages();
             Player player = new Player(6, 4, "★");
@@ -23,9 +24,9 @@
                 Console.Write(box2.Shape);
 
                 key = Console.ReadKey();
-                player.Move(stages.stage1, key);
-                player.Collider(stages.stage1, box1.X, box1.Y);
-                player.Collider(stages.stage1, box2.X, box2.Y);
+                player.Move(stages.stage1, key, ref direction);                
+                player.Collider(stages.stage1, box1.X, box1.Y, ref direction);
+                player.Collider(stages.stage1, box2.X, box2.Y, ref direction);
 
                 Console.Clear();
             }

@@ -25,9 +25,8 @@ namespace C__Sokoban
             y = new int();
             shape = boxes.shape;
         }
-
         public int X
-        {        
+        {
             get { return x; }
             set { x = value; }
         }
@@ -40,6 +39,11 @@ namespace C__Sokoban
         {
             get { return shape; }
             set { shape = value; }
+        }
+
+        public void BoxMove(int[,] stage, int px, int py)
+        {
+            
         }
     }
 }

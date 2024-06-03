@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -35,7 +36,7 @@ namespace C__Sokoban
             set { shape = value; }
         }
 
-        public void Move(int [,] stage, ConsoleKeyInfo key)
+        public void Move(int [,] stage, ConsoleKeyInfo key, ref int direction)
         {
             switch (key.Key)
             {
@@ -43,35 +44,39 @@ namespace C__Sokoban
                     if (stage[y - 1, x / 2] != 1)
                     {
                         y--;
+                        direction = 1;
                     }
                     break;
                 case ConsoleKey.LeftArrow:
                     if (stage[y, x / 2 - 1] != 1)
                     {
                         x -= 2;
+                        direction = 2;
                     }
                     break;
                 case ConsoleKey.RightArrow:
                     if (stage[y, x / 2 + 1] != 1)
                     {
                         x += 2;
+                        direction = 3;
                     }
                     break;
                 case ConsoleKey.DownArrow:
                     if (stage[y + 1, x / 2] != 1)
                     {
                         y++;
+                        direction = 4;
                     }
                     break;
             }
         }
-        public void Collider(int[,] stage, int bx, int by)
+        public void Collider(int[,] stage, int bx, int by, ref int direction)
         {
-            if (stage[y - 1, x / 2] == stage[by, bx / 2])
+            if (stage[by, bx / 2] == stage[y, x / 2])
             {
-                if (stage[by - 1, bx / 2] != 1)
+                if(direction == 1)
                 {
-
+                    by--;
                 }
             }
         }
