@@ -41,10 +41,5 @@ namespace C__Sokoban
             get { return shape; }
             set { shape = value; }
         }
-
-        public void Collider(int[,] stage, int direction)
-        {
-
-        }
     }
 }

@@ -12,7 +12,6 @@ namespace C__Sokoban
         private int x;
         private int y;
         private string shape;
-        static int direction;
 
         public Player(int x, int y, string shape)
         {
@@ -36,28 +35,45 @@ namespace C__Sokoban
             set { shape = value; }
         }
 
-        public int Move(int [,] stage, ConsoleKeyInfo key)
+        public void Move(int [,] stage, ConsoleKeyInfo key)
         {
             switch (key.Key)
             {
                 case ConsoleKey.UpArrow:
-                    if (stage[y - 1, x / 2] != 1) y--;
-                    direction = 1;
+                    if (stage[y - 1, x / 2] != 1)
+                    {
+                        y--;
+                    }
                     break;
                 case ConsoleKey.LeftArrow:
-                    if (stage[y, x / 2 - 1] != 1) x -= 2;
-                    direction = 2;
+                    if (stage[y, x / 2 - 1] != 1)
+                    {
+                        x -= 2;
+                    }
                     break;
                 case ConsoleKey.RightArrow:
-                    if (stage[y, x / 2 + 1] != 1) x += 2;
-                    direction = 3;
+                    if (stage[y, x / 2 + 1] != 1)
+                    {
+                        x += 2;
+                    }
                     break;
                 case ConsoleKey.DownArrow:
-                    if (stage[y + 1, x / 2] != 1) y++;
-                    direction = 4;
+                    if (stage[y + 1, x / 2] != 1)
+                    {
+                        y++;
+                    }
                     break;
             }
-            return direction;
+        }
+        public void Collider(int[,] stage, int bx, int by)
+        {
+            if (stage[y - 1, x / 2] == stage[by, bx / 2])
+            {
+                if (stage[by - 1, bx / 2] != 1)
+                {
+
+                }
+            }
         }
     }
 }
