@@ -8,7 +8,6 @@ namespace C__Sokoban
 {
     internal class Stages
     {
-        int i = 0;
         List<int[,]> stage = new List<int[,]>();
 
         public int[,] stage1 = new int[7, 7] {
@@ -23,8 +22,8 @@ namespace C__Sokoban
         public int[,] stage2 = new int[9, 9] {
             {1,1,1,1,1,0,0,0,0 },
             {1,0,0,0,1,0,0,0,0 },
-            {1,0,3,3,1,0,1,1,1 },
-            {1,0,3,0,1,0,1,2,1 },
+            {1,0,0,0,1,0,1,1,1 },
+            {1,0,0,0,1,0,1,2,1 },
             {1,1,1,0,1,1,1,2,1 },
             {0,1,1,0,0,0,0,2,1 },
             {0,1,0,0,0,1,0,0,1 },
@@ -64,7 +63,7 @@ namespace C__Sokoban
                 Console.WriteLine();
             }
         }
-        public int GoalCount(int[, ] stage)
+        public int GoalCount(int[,] stage)
         {
             int goalCount = 0;
             for (int i = 0; i < stage.GetLength(0); i++)

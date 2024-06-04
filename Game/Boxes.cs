@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    internal class Player
+    internal class Boxes
     {
         private int x;
         private int y;
         private string shape;
 
-        public Player(int x, int y, string shape)
+        public Boxes(int x, int y, string shape)
         {
             this.x = x;
             this.y = y;
@@ -37,47 +37,35 @@ namespace Game
             set { shape = value; }
         }
 
-        public void Move(int[,] stage, Boxes[] boxes, ConsoleKeyInfo key)
+        public void Move(int[,] stage, int playerX, int playerY, ConsoleKeyInfo key)
         {
             switch (key.Key)
             {
                 case ConsoleKey.UpArrow:
-                    if (!IsCollidingWithBox(boxes, x / 2, y - 1) && stage[y - 1, x / 2] != 1)
+                    if (playerX == x / 2 && playerY == y + 1 && stage[y - 1, x / 2] != 1)
                     {
                         y--;
                     }
                     break;
                 case ConsoleKey.LeftArrow:
-                    if (!IsCollidingWithBox(boxes, x / 2 - 1, y) && stage[y, x / 2 - 1] != 1)
+                    if (playerY == y && playerX == x / 2 + 1 && stage[y, x / 2 - 1] != 1)
                     {
                         x -= 2;
                     }
                     break;
                 case ConsoleKey.RightArrow:
-                    if (!IsCollidingWithBox(boxes, x / 2 + 1, y) && stage[y, x / 2 + 1] != 1)
+                    if (playerY == y && playerX == x / 2 - 1 && stage[y, x / 2 + 1] != 1)
                     {
                         x += 2;
                     }
                     break;
                 case ConsoleKey.DownArrow:
-                    if (!IsCollidingWithBox(boxes, x / 2, y + 1) && stage[y + 1, x / 2] != 1)
+                    if (playerX == x / 2 && playerY == y - 1 && stage[y + 1, x / 2] != 1)
                     {
                         y++;
                     }
                     break;
             }
-        }
-
-        private bool IsCollidingWithBox(Boxes[] boxes, int x, int y)
-        {
-            foreach (var box in boxes)
-            {
-                if (box.X / 2 == x && box.Y == y)
-                {
-                    return true;
-                }
-            }
-            return false;
         }
     }
 }
