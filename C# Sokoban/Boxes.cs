@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace C__Sokoban
 {
@@ -41,9 +42,37 @@ namespace C__Sokoban
             set { shape = value; }
         }
 
-        public void BoxMove(int[,] stage, int px, int py)
+        public void BoxMove(int[,] stage, int px, int py, ref int pushbox)
         {
-            
+            switch (pushbox)
+            {
+                case 1:
+                    if (y == py && x / 2 == px / 2)
+                    {
+                        y--;
+                    }
+                    break;
+                case 2:
+                    if (y == py && x / 2 == px / 2)
+                    {
+                        x -= 2;
+                    }
+                    break;
+                case 3:
+                    if (y == py && x / 2 == px / 2)
+                    {
+                        x += 2;
+                    }
+                    break;
+                case 4:
+                    if (y == py && x / 2 == px / 2)
+                    {
+                        y++;
+                    }
+                    break;
+                default :
+                    break;
+            }
         }
     }
 }

@@ -4,10 +4,11 @@
     {
         static void Main(string[] args)
         {
-            int direction = 0;
+            int pushbox1 = 5;
+            int pushbox2 = 5;
             Screen screen = new Screen();
             Stages stages = new Stages();
-            Player player = new Player(6, 4, "★");
+            Player player = new Player(8, 1, "★");
             Boxes box1 = new Boxes(6, 3, "■");
             Boxes box2 = new Boxes(8, 4, box1.Shape);
 
@@ -24,9 +25,13 @@
                 Console.Write(box2.Shape);
 
                 key = Console.ReadKey();
-                player.Move(stages.stage1, key, ref direction);                
-                player.Collider(stages.stage1, box1.X, box1.Y, ref direction);
-                player.Collider(stages.stage1, box2.X, box2.Y, ref direction);
+                player.Collider(stages.stage1, box1.X, box1.Y, ref pushbox1);
+                player.Collider(stages.stage1, box2.X, box2.Y, ref pushbox2);
+
+                player.Move(stages.stage1, key);
+
+                box1.BoxMove(stages.stage1, player.X, player.Y, ref pushbox1);               
+                box2.BoxMove(stages.stage1, player.X, player.Y, ref pushbox2);
 
                 Console.Clear();
             }
