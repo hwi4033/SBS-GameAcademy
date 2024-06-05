@@ -13,18 +13,21 @@ namespace C__Sokoban
         private int x;
         private int y;
         private string shape;
+        private int pushbox;
 
-        public Boxes(int x, int y, string shape)
+        public Boxes(int x, int y, string shape, int pushbox)
         {
             this.x = x;
             this.y = y;
             this.shape = shape;
+            this.pushbox = pushbox;
         }
         public Boxes(Boxes boxes)
         {
             x = new int();
             y = new int();
             shape = boxes.shape;
+            pushbox = new int();
         }
         public int X
         {
@@ -41,8 +44,13 @@ namespace C__Sokoban
             get { return shape; }
             set { shape = value; }
         }
+        public int Pushbox
+        {
+            get { return pushbox; }
+            set { pushbox = value; }
+        }
 
-        public void BoxMove(int[,] stage, int px, int py, ref int pushbox)
+        public void BoxMove(int[,] stage, int px, int py, int pushbox)
         {
             switch (pushbox)
             {

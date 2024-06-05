@@ -8,62 +8,75 @@ namespace Game
 {
     internal class Boxes
     {
-        private int x;
-        private int y;
-        private string shape;
+        protected int x;
+        protected int y;
+        protected string shape;
+        private int pushbox;
 
-        public Boxes(int x, int y, string shape)
+        public Boxes(int x, int y, string shape, int pushbox)
         {
             this.x = x;
             this.y = y;
             this.shape = shape;
+            this.pushbox = pushbox;
         }
-
+        public Boxes(Boxes boxes)
+        {
+            x = new int();
+            y = new int();
+            shape = boxes.shape;
+            pushbox = new int();
+        }
         public int X
         {
             get { return x; }
             set { x = value; }
         }
-
         public int Y
         {
             get { return y; }
             set { y = value; }
         }
-
         public string Shape
         {
             get { return shape; }
             set { shape = value; }
         }
-
-        public void Move(int[,] stage, int playerX, int playerY, ConsoleKeyInfo key)
+        public int Pushbox
         {
-            switch (key.Key)
+            get { return pushbox; }
+            set { pushbox = value; }
+        }
+
+        public void BoxMove(int[,] stage, int px, int py, int pushbox)
+        {
+            switch (pushbox)
             {
-                case ConsoleKey.UpArrow:
-                    if (playerX == x / 2 && playerY == y + 1 && stage[y - 1, x / 2] != 1)
+                case 1:
+                    if (y == py && x / 2 == px / 2)
                     {
                         y--;
                     }
                     break;
-                case ConsoleKey.LeftArrow:
-                    if (playerY == y && playerX == x / 2 + 1 && stage[y, x / 2 - 1] != 1)
+                case 2:
+                    if (y == py && x / 2 == px / 2)
                     {
                         x -= 2;
                     }
                     break;
-                case ConsoleKey.RightArrow:
-                    if (playerY == y && playerX == x / 2 - 1 && stage[y, x / 2 + 1] != 1)
+                case 3:
+                    if (y == py && x / 2 == px / 2)
                     {
                         x += 2;
                     }
                     break;
-                case ConsoleKey.DownArrow:
-                    if (playerX == x / 2 && playerY == y - 1 && stage[y + 1, x / 2] != 1)
+                case 4:
+                    if (y == py && x / 2 == px / 2)
                     {
                         y++;
                     }
+                    break;
+                default:
                     break;
             }
         }

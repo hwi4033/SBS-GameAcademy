@@ -6,78 +6,96 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    internal class Player
+    internal class Player : Boxes
     {
-        private int x;
-        private int y;
-        private string shape;
+        private int px;
+        private int py;
+        private string pshape;
+        private int moveCount = 0;
 
         public Player(int x, int y, string shape)
         {
-            this.x = x;
-            this.y = y;
-            this.shape = shape;
+            px = x;
+            py = y;
+            pshape = shape;
         }
-
-        public int X
+        public int Px
         {
-            get { return x; }
-            set { x = value; }
+            get { return px; }
+            set { px = value; }
         }
-
-        public int Y
+        public int Py
         {
-            get { return y; }
-            set { y = value; }
+            get { return py; }
+            set { py = value; }
         }
-
-        public string Shape
+        public string Pshape
         {
-            get { return shape; }
-            set { shape = value; }
+            get { return pshape; }
+            set { pshape = value; }
+        }
+        public int MoveCount
+        {
+            get { return moveCount; }
+            set { moveCount = value; }
         }
 
-        public void Move(int[,] stage, Boxes[] boxes, ConsoleKeyInfo key)
+        public void Move(int[,] stage, ConsoleKeyInfo key)
         {
             switch (key.Key)
             {
                 case ConsoleKey.UpArrow:
-                    if (!IsCollidingWithBox(boxes, x / 2, y - 1) && stage[y - 1, x / 2] != 1)
+                    if (stage[py - 1, px / 2] != 1 && stage[py - 1, px / 2] != stage[y, x / 2])
                     {
-                        y--;
+                        py--;
+                        moveCount++;
                     }
                     break;
                 case ConsoleKey.LeftArrow:
-                    if (!IsCollidingWithBox(boxes, x / 2 - 1, y) && stage[y, x / 2 - 1] != 1)
+                    if (stage[py, px / 2 - 1] != 1)
                     {
-                        x -= 2;
+                        px -= 2;
+                        moveCount++;
                     }
                     break;
                 case ConsoleKey.RightArrow:
-                    if (!IsCollidingWithBox(boxes, x / 2 + 1, y) && stage[y, x / 2 + 1] != 1)
+                    if (stage[py, px / 2 + 1] != 1)
                     {
-                        x += 2;
+                        px += 2;
+                        moveCount++;
                     }
                     break;
                 case ConsoleKey.DownArrow:
-                    if (!IsCollidingWithBox(boxes, x / 2, y + 1) && stage[y + 1, x / 2] != 1)
+                    if (stage[py + 1, px / 2] != 1)
                     {
-                        y++;
+                        py++;
+                        moveCount++;
                     }
                     break;
             }
         }
-
-        private bool IsCollidingWithBox(Boxes[] boxes, int x, int y)
+        public void Collider(int[,] stage, int bx, int by, ref int pushbox)
         {
-            foreach (var box in boxes)
+            if (py - 1 == by && px / 2 == bx / 2)
             {
-                if (box.X / 2 == x && box.Y == y)
-                {
-                    return true;
-                }
+                if (stage[by - 1, bx / 2] == 1) pushbox = 0;
+                else pushbox = 1;
             }
-            return false;
+            else if (py == by && px / 2 - 1 == bx / 2)
+            {
+                if (stage[by, bx / 2 - 1] == 1) pushbox = 0;
+                else pushbox = 2;
+            }
+            else if (py == by && px / 2 + 1 == bx / 2)
+            {
+                if (stage[by, bx / 2 + 1] == 1) pushbox = 0;
+                else pushbox = 3;
+            }
+            else if (py + 1 == by && px / 2 == bx / 2)
+            {
+                if (stage[by + 1, bx / 2] == 1) pushbox = 0;
+                else pushbox = 4;
+            }
         }
     }
 }
