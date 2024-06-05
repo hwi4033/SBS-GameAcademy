@@ -7,25 +7,15 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
-public enum Direction
-{
-    North,
-    West,
-    East,
-    South
-}
-
 namespace C__Sokoban
 {
     internal class Player
     {
         private int x;
         private int y;
+        private int moveCount = 0;
         private int crashbox = 0;
         private string shape;
-        private int moveCount = 0;
-
-        private Direction direction;
 
         public Player(int x, int y, string shape)
         {
@@ -44,6 +34,11 @@ namespace C__Sokoban
             get { return y; }
             set { y = value; }
         }
+        public int MoveCount
+        {
+            get { return moveCount; }
+            set { moveCount = value; }
+        }
         public int Crashbox
         {
             get { return crashbox; }
@@ -53,11 +48,6 @@ namespace C__Sokoban
         {
             get { return shape; }
             set { shape = value; }
-        }
-        public int MoveCount
-        {
-            get { return moveCount; }
-            set { moveCount = value; }
         }
 
         public void Move(int [,] stage, ConsoleKeyInfo key, int crashbox)
@@ -69,12 +59,10 @@ namespace C__Sokoban
                     {
                         y--;
                         moveCount++;
-
                         if(crashbox == 1)
                         {
                             y++;
                         }
-                        direction = Direction.North;
                     }
                     break;
                 case ConsoleKey.LeftArrow:
@@ -82,12 +70,10 @@ namespace C__Sokoban
                     {
                         x -= 2;
                         moveCount++;
-
                         if (crashbox == 2)
                         {
                             x += 2;
                         }
-                        direction = Direction.West;
                     }
                     break;
                 case ConsoleKey.RightArrow:
@@ -95,12 +81,10 @@ namespace C__Sokoban
                     {
                         x += 2;
                         moveCount++;
-
                         if (crashbox == 3)
                         {
                             x -= 2;
                         }
-                        direction = Direction.East;
                     }
                     break;
                 case ConsoleKey.DownArrow:
@@ -108,18 +92,15 @@ namespace C__Sokoban
                     {
                         y++;
                         moveCount++;
-
                         if (crashbox == 4)
                         {
                             y--;
                         }
-                        direction = Direction.South;
                     }
 
                     break;
             }
         }
-
 
         public void Collider(int[,] stage, int bx, int by, ref int pushbox)
         {

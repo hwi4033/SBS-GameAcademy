@@ -12,6 +12,7 @@ namespace C__Sokoban
     {
         private int x;
         private int y;
+        private int boxCrash;
         private string shape;
         private int pushbox;
 
@@ -39,6 +40,11 @@ namespace C__Sokoban
             get { return y; }
             set { y = value; }
         }
+        public int BoxCrash
+        {
+            get { return boxCrash; }
+            set { boxCrash = value; }
+        }
         public string Shape
         {
             get { return shape; }
@@ -50,6 +56,25 @@ namespace C__Sokoban
             set { pushbox = value; }
         }
 
+        public void Crash(int[,] stage, int bx, int by)
+        {
+            if (stage[y - 1, x / 2] == stage[by, bx / 2])
+            {
+                boxCrash = 1;
+            }
+            else if (stage[y, x / 2 - 1] == stage[by, bx / 2])
+            {
+                boxCrash = 2;
+            }
+            else if (stage[y, x / 2 + 1] == stage[by, bx / 2])
+            {
+                boxCrash = 3;
+            }
+            else if (stage[y + 1, x / 2] == stage[by, bx / 2])
+            {
+                boxCrash = 4;
+            }
+        }
         public void BoxMove(int[,] stage, int px, int py, int pushbox)
         {
             switch (pushbox)
