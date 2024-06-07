@@ -97,7 +97,6 @@ namespace C__Sokoban
                             y--;
                         }
                     }
-
                     break;
             }
         }

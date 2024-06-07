@@ -39,7 +39,7 @@ namespace C__Sokoban
             {1,1,2,0,1,0,0,0,2,1,0 },
             {0,1,1,1,1,1,1,1,1,1,0 }
         };
-        
+
         public Stages()
         {
             AddStage();
@@ -62,18 +62,6 @@ namespace C__Sokoban
                 }
                 Console.WriteLine();
             }
-        }
-        public int GoalCount(int[,] stage)
-        {
-            int goalCount = 0;
-            for (int i = 0; i < stage.GetLength(0); i++)
-            {
-                for (int j = 0; j < stage.GetLength(1); j++)
-                {
-                    if (stage[i, j] == 2) goalCount++;
-                }
-            }
-            return goalCount;
         }
     }
 }
